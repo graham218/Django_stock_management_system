@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+    <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
+</head>
+<body>
+	<form method='POST' action=''>{% csrf_token %}
+		{{form}}
+        <input type="submit" value='Save'/>
+    </form>
+
+</body>
+</html>
