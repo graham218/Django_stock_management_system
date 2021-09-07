@@ -14,7 +14,8 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<!--link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"-->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -44,7 +45,8 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="navbar-top-fixed.css" rel="stylesheet">
+    <!--link href="navbar-top-fixed.css" rel="stylesheet"-->
+    <link href="{% static 'css/navbar-top-fixed.css' %}" rel="stylesheet">
   </head>
   <body>
     
@@ -83,8 +85,8 @@
 </main>
 
 
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
+    <!--script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
       
   </body>
 </html>
