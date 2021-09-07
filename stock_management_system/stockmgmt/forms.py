@@ -1,5 +1,5 @@
 from django import forms
-from .models import Stock
+from .models import *
 
 class StockCreateForm(forms.ModelForm):
    class Meta:
