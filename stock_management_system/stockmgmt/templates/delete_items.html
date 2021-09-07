@@ -1,23 +1,4 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Item List</title>
-    <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
-</head>
-<body>
-	{{title}}<br>
-	{% for instance in queryset %}
-	{{instance.item_name}}, {{instance.quantity}}<br>
-
-	{% endfor %}
-	
-
-</body>
-</html>
-
-
-{% load staticfiles %}
 {% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
@@ -72,36 +53,14 @@
   <body>
     {% include 'navbar.html' %} 
 
-  <main class="container">
-    <div class="bg-light p-5 rounded">
-    <div class="header">{{header}}</div>
-    <form method='POST' action=''>{% csrf_token %}
-        {{form|crispy}}
-            <input type="submit" value='Search'/>
-    </form>
-    <br>
-    <div class="display_table">
-      <table class='table'>
-        <thead>
-          <tr>
-            <th>COUNT</th>
-            <th>CATEGORY</th>
-            <th>ITEM NAME</th>
-            <th>QUANTITY IN STORE</th>
-            <th>Update Items</th>
-          </tr>
-        </thead>
-      {% for instance in queryset %}
-          <tr>
-            <td>{{forloop.counter}}</td>
-            <td>{{instance.category}}</td>
-            <td>{{instance.item_name}}</td>
-            <td>{{instance.quantity}}</td>
-            <td><a href="{% url 'update_items' instance.id %}">{{instance.item_name}}</a></td>
-          </tr>
-      {% endfor %}
-      </table
-    </div><!--End of display table-->
+<main class="container">
+  <div class="bg-light p-5 rounded">
+    <form method="post" action="">
+        {% csrf_token %}
+          <h1>Are you sure you want to delete?</h1><br>
+          <input class="btn btn-danger" type="submit" value="Yes" />
+          <a href="/list_items"><div class="btn btn-primary">Cancel</div></a>
+     </form>
   </div>
 </main>
 
