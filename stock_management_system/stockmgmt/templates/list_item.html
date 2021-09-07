@@ -71,13 +71,32 @@
   <body>
     {% include 'navbar.html' %} 
 
-<main class="container">
-  <div class="bg-light p-5 rounded">
-    {{title}}<br>
-	{% for instance in queryset %}
-	{{instance.item_name}}, {{instance.quantity}}<br>
-
-	{% endfor %}
+  <main class="container">
+    <div class="bg-light p-5 rounded">
+      {{title}}<br>
+      <table class='table'>
+        
+    </table>
+    <div class="display_table">
+      <table>
+        <thead>
+          <tr>
+            <th>COUNT</th>
+            <th>CATEGORY</th>
+            <th>ITEM NAME</th>
+            <th>QUANTITY IN STORE</th>
+          </tr>
+        </thead>
+      {% for instance in queryset %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{instance.category}}</td>
+            <td>{{instance.item_name}}</td>
+            <td>{{instance.quantity}}</td>
+          </tr>
+      {% endfor %}
+      </table
+    </div><!--End of display table-->
   </div>
 </main>
 
