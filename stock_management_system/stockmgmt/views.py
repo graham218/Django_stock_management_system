@@ -23,7 +23,7 @@ def add_items(request):
 	form = StockCreateForm(request.POST or None)
 	if form.is_valid():
 		form.save()
-	return redirect('/list_item')
+		return redirect('/list_item')
 	context = {
 		"form": form,
 		"title": "Add Item",
