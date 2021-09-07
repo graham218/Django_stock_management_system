@@ -16,7 +16,6 @@ class StockCreateForm(forms.ModelForm):
 				raise forms.ValidationError(str(category) + ' is already created')
 		return category
 
-
 	def clean_item_name(self):
 		item_name = self.cleaned_data.get('item_name')
 		if not item_name:
