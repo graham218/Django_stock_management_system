@@ -10,6 +10,10 @@ class StockCreateForm(forms.ModelForm):
 		category = self.cleaned_data.get('category')
 		if not category:
 			raise forms.ValidationError('This field is required')
+    
+    for instance in Stock.objects.all():
+			if instance.category == category:
+				raise forms.ValidationError(str(category) + ' is already created')
 		return category
 
 
