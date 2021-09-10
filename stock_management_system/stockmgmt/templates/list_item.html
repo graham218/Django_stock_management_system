@@ -78,7 +78,12 @@
             <td>{{forloop.counter}}</td>
             <td>{{instance.category}}</td>
             <td>{{instance.item_name}}</td>
-            <td>{{instance.quantity}}</td>
+            <td>
+              {% if instance.quantity <= instance.reorder_level %}
+              <div style="background-color: orange;">{{instance.quantity}}</div>
+              {% else %}{{instance.quantity}}
+              {% endif %}
+            </td>
             <td><a href="{% url 'update_items' instance.id %}" class="btn btn-info">Update</a></td>
             <td><a href="{% url 'delete_items' instance.id %}" class="btn btn-danger">Delete</a></td>
           </tr>
