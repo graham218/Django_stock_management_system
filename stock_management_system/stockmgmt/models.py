@@ -2,16 +2,17 @@ from django.db import models
 
 # Create your models here.
 
-category_choice = (
-		('Furniture', 'Furniture'),
-		('IT Equipment', 'IT Equipment'),
-		('Phone', 'Phone'),
-	)
-	category = models.CharField(max_length=50, blank=True, null=True, choices=category_choice)
+
+#category_choice = (
+#		('Furniture', 'Furniture'),
+#		('IT Equipment', 'IT Equipment'),
+#		('Phone', 'Phone'),
+#	)
+#category = models.CharField(max_length=50, blank=True, null=True, choices=category_choice)
 
 class Stock(models.Model):
-	#category = models.CharField(max_length=50, blank=True, null=True)
-	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	category = models.CharField(max_length=50, blank=True, null=True)
+	#category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	item_name = models.CharField(max_length=50, blank=True, null=True)
 	quantity = models.IntegerField(default='0', blank=True, null=True)
 	receive_quantity = models.IntegerField(default='0', blank=True, null=True)

@@ -38,7 +38,7 @@ def list_item(request):
 	
 	context = {
 	"form": form,
-	"header": header,
+	"title": title,
 	"queryset": queryset,
 	}
 	return render(request, "list_item.html", context)
