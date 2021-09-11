@@ -55,7 +55,11 @@
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <p>Welcome to the home page</p>
+    {% block title %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
   </div>
 </main>
 
