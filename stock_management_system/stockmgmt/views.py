@@ -163,7 +163,6 @@ def list_history(request):
 		category = form['category'].value()
 		queryset = StockHistory.objects.filter(
 								item_name__icontains=form['item_name'].value(),
-								item_name__icontains=form['item_name'].value(),
 								last_updated__range=[
 														form['start_date'].value(),
 														form['end_date'].value()
