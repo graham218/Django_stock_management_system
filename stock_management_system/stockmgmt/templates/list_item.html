@@ -69,6 +69,7 @@
             <th>CATEGORY</th>
             <th>ITEM NAME</th>
             <th>QUANTITY IN STORE</th>
+            <th>REORDER LEVEL</td>
             <th>Update Items</th>
             <th>Delete Items</th>
           </tr>
@@ -84,6 +85,7 @@
               {% else %}{{instance.quantity}}
               {% endif %}
             </td>
+            <td><a href="{% url 'reorder_level' instance.id %}">{{instance.reorder_level}}</a></td>
             <td><a href="{% url 'update_items' instance.id %}" class="btn btn-info">Update</a></td>
             <td><a href="{% url 'delete_items' instance.id %}" class="btn btn-danger">Delete</a></td>
           </tr>
