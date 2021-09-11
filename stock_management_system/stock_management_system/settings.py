@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -121,3 +122,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
